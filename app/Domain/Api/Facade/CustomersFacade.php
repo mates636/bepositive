@@ -3,6 +3,7 @@
 namespace App\Domain\Api\Facade;
 
 use App\Domain\Api\Request\CreateCustomerReqDto;
+use App\Domain\Api\Request\UpdateCustomerReqDto;
 use App\Domain\Api\Response\CustomerResDto;
 use App\Domain\Customer\Customer;
 use App\Model\Database\EntityManagerDecorator;
@@ -73,6 +74,21 @@ final class CustomersFacade
 		);
 
 		$this->em->persist($customer);
+		$this->em->flush($customer);
+
+		return $customer;
+	}
+
+	public function update(UpdateCustomerReqDto $dto): Customer
+	{
+		$customer = new Customer(
+			$dto->firstname,
+			$dto->lastname,
+			$dto->email,
+			$dto->telephone
+		);
+		
+		// $this->em->merge($customer);
 		$this->em->flush($customer);
 
 		return $customer;

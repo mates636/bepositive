@@ -4,22 +4,16 @@ namespace App\Domain\Api\Request;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-final class CreateCustomerReqDto
+final class UpdateCustomerReqDto
 {
 
-	/**
-	 * @Assert\NotBlank
-	 * @Assert\Email
-	 */
+	
 	public string $email;
 
-	/** @Assert\NotBlank */
 	public string $firstname;
 
-	/** @Assert\NotBlank */
 	public string $lastname;
 
-	/** @Assert\NotBlank */
 	public string $telephone;
 
 
