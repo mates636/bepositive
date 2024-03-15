@@ -7,7 +7,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 final class UpdateCustomerReqDto
 {
 
-	
+	/**
+	 * @Assert\Email
+	 */
 	public string $email;
 
 	public string $firstname;
