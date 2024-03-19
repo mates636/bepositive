@@ -109,7 +109,6 @@ final class CustomersFacade
 
 	public function delete(int $id): Customer
 	{
-		// $customer = new Customer();
 
 		$customer = $this->em->getRepository(Customer::class)->find($id);
 
@@ -117,18 +116,7 @@ final class CustomersFacade
 			throw new EntityNotFoundException();
 		}
 
-		// if($dto->email){
-		// 	$customer->setEmail($dto->email);
-		// }
-		// if($dto->firstname){
-		// 	$customer->setFirstName($dto->firstname);
-		// }
-		// if($dto->lastname){
-		// 	$customer->setLastName($dto->lastname);
-		// }
-		// if($dto->telephone){
-		// 	$customer->setTelephone($dto->telephone);
-		// }
+		
 
 		$this->em->remove($customer);
 		$this->em->flush($customer);

@@ -14,9 +14,5 @@ use App\Model\Database\Repository\AbstractRepository;
 class ProductRepository extends AbstractRepository
 {
 
-	// public function findOneByName(string $name): ?Product
-	// {
-	// 	return $this->findOneBy(['email' => $name]);
-	// }
 
 }

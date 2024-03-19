@@ -5,6 +5,8 @@ services:
 	- App\Domain\Api\Facade\UsersFacade
 	- App\Domain\Api\Facade\CustomersFacade
 	- App\Domain\Api\Facade\ProductsFacade
+	- App\Domain\Api\Facade\OrdersFacade
+
 
 
 	## Serialize =============

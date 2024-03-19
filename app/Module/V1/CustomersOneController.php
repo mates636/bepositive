@@ -25,26 +25,6 @@ class CustomersOneController extends BaseV1Controller
 		$this->customersFacade = $customersFacade;
 	}
 
-	/**
-	 * @Apitte\OpenApi("
-	 *   summary: Get user by email.
-	 * ")
-	 * @Apitte\Path("/email")
-	 * @Apitte\Method("GET")
-	 * @Apitte\RequestParameters({
-	 *      @Apitte\RequestParameter(name="email", in="query", type="string", description="User e-mail address")
-	 * })
-	 */
-	public function byEmail(ApiRequest $request): CustomerResDto
-	{
-		try {
-			return $this->customersFacade->findOneBy(['email' => $request->getParameter('email')]);
-		} catch (EntityNotFoundException $e) {
-			throw ClientErrorException::create()
-				->withMessage('Customer not found')
-				->withCode(IResponse::S404_NotFound);
-		}
-	}
 
 	/**
 	 * @Apitte\OpenApi("

@@ -7,9 +7,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 final class DeleteCustomerReqDto
 {
 
-	/**
-	 * @Assert\Email
-	 */
 	public string $email;
 
 	public string $firstname;
